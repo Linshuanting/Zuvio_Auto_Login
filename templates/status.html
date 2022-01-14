@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}簽到狀態{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/status.css') }}">
+{% endblock %}
+
+
+{% block inner %}
+<h3>簽到狀態</h3>
+<p>未完成簽到</p>
+<div class="status_box" id="status_box">
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/status.js') }}"></script>
+{% endblock %}
+

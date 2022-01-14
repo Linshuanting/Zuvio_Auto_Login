@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}設定{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/setting.css') }}">
+{% endblock %}
+
+{% block inner %}
+<h3>設定</h3>
+<p>帳號密碼請輸入在同一欄位，並以空格隔開，範例：account passwd<br>時間格式為小時分鐘制，並輸入開始與結束時間，以空格隔開，範例：13:00 15:00 </p>
+<!-- <br /> -->
+<form action="/setting" method="POST" id="setting">
+	<div class="txt_field">
+		<input type="text" name="course_name" >
+		<span></span>
+		<label>課堂名稱</label>
+	  </div>
+	<div class="setting">
+		<div>
+			<div id="time">
+			</div>
+			<button type="button" class="add_botton btn41-43 btn-42"
+				onclick="add_input('beforeend', 'time', '')">ADD</button>
+		</div>
+		<div>
+			<div id="account">
+			</div>
+			<button type="button" class="ADD_botton btn41-43 btn-42"
+				onclick="add_input('beforeend', 'account', '')">ADD</button>
+		</div>
+	</div>
+	<button class="btn41-43 btn-42" type="submit" form="setting" value="Submit">儲存資料</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/setting.js') }}"></script>
+{% endblock %}
